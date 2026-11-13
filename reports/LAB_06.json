@@ -1,23 +1,203 @@
 {
-  "gates": {"daily": ["pass", "pass", "fail", "not_reached"], "batch": ["pass", "pass", "pass", "pass"]},
-  "constants": {"model": null, "schemas_sha": null, "checks_sha": null, "reviewer": null, "task_ids": []},
-  "arms": {
-    "S": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                     "mean_tokens": null, "mean_wall_s": null},
-          "batch": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                    "mean_tokens": null, "mean_wall_s": null}},
-    "M": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                     "mean_tokens": null, "mean_wall_s": null},
-          "batch": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                    "mean_tokens": null, "mean_wall_s": null}},
-    "S_plus": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                          "mean_tokens": null, "mean_wall_s": null},
-               "batch": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                         "mean_tokens": null, "mean_wall_s": null}}
+  "gates": {
+    "daily": [
+      "pass",
+      "pass",
+      "fail",
+      "not_reached"
+    ],
+    "batch": [
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ]
   },
-  "multiplier": {"single": null, "batch": null},
-  "spend_check": {"single": {"spent_more": null, "spend_raises_score": null, "one_agent_as_well": null},
-                  "batch": {"spent_more": null, "spend_raises_score": null, "one_agent_as_well": null}},
-  "failures": [],
-  "decision": {"single": null, "batch": null, "revisit_condition": null}
+  "constants": {
+    "checks_sha": "55abcd67e6a3b208",
+    "model": "gpt-4.1-mini",
+    "reviewer": "scripted:approve-all",
+    "schemas_sha": "703c0002892f27ec",
+    "task_ids": [
+      "batch-a",
+      "batch-b",
+      "one-4402",
+      "one-4403",
+      "one-4405",
+      "one-4406",
+      "one-4409",
+      "one-4413"
+    ]
+  },
+  "arms": {
+    "S": {
+      "single": {
+        "runs": 18,
+        "passes": 13,
+        "per_task": {
+          "one-4402": 2,
+          "one-4403": 0,
+          "one-4405": 3,
+          "one-4406": 3,
+          "one-4409": 2,
+          "one-4413": 3
+        },
+        "sweep_min": 4,
+        "sweep_max": 5,
+        "all_three": 3,
+        "mean_tokens": 41107,
+        "mean_wall_s": 7.8
+      },
+      "batch": {
+        "runs": 6,
+        "passes": 0,
+        "per_task": {
+          "batch-a": 0,
+          "batch-b": 0
+        },
+        "sweep_min": 0,
+        "sweep_max": 0,
+        "all_three": 0,
+        "mean_tokens": 305055,
+        "mean_wall_s": 31.4
+      }
+    },
+    "M": {
+      "single": {
+        "runs": 18,
+        "passes": 14,
+        "per_task": {
+          "one-4402": 3,
+          "one-4403": 0,
+          "one-4405": 2,
+          "one-4406": 3,
+          "one-4409": 3,
+          "one-4413": 3
+        },
+        "sweep_min": 4,
+        "sweep_max": 5,
+        "all_three": 4,
+        "mean_tokens": 36116,
+        "mean_wall_s": 13.0
+      },
+      "batch": {
+        "runs": 6,
+        "passes": 0,
+        "per_task": {
+          "batch-a": 0,
+          "batch-b": 0
+        },
+        "sweep_min": 0,
+        "sweep_max": 0,
+        "all_three": 0,
+        "mean_tokens": 161351,
+        "mean_wall_s": 17.4
+      }
+    },
+    "S_plus": {
+      "single": {
+        "runs": 18,
+        "passes": 13,
+        "per_task": {
+          "one-4402": 3,
+          "one-4403": 0,
+          "one-4405": 3,
+          "one-4406": 2,
+          "one-4409": 2,
+          "one-4413": 3
+        },
+        "sweep_min": 4,
+        "sweep_max": 5,
+        "all_three": 3,
+        "mean_tokens": 32788,
+        "mean_wall_s": 9.6
+      },
+      "batch": {
+        "runs": 6,
+        "passes": 0,
+        "per_task": {
+          "batch-a": 0,
+          "batch-b": 0
+        },
+        "sweep_min": 0,
+        "sweep_max": 0,
+        "all_three": 0,
+        "mean_tokens": 160989,
+        "mean_wall_s": 43.8
+      }
+    }
+  },
+  "multiplier": {
+    "single": 0.88,
+    "batch": 0.53
+  },
+  "spend_check": {
+    "single": {
+      "spent_more": "no",
+      "spend_raises_score": "no",
+      "one_agent_as_well": "yes"
+    },
+    "batch": {
+      "spent_more": "no",
+      "spend_raises_score": "no",
+      "one_agent_as_well": "yes"
+    }
+  },
+  "failures": [
+    {
+      "run_id": "split-batch-a-s01-2fee6b",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-a-s02-cc3f62",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-a-s03-1cd4bd",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-b-s01-a44162",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-b-s02-2208fb",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-b-s03-125698",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4403-s01-59cbec",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4403-s02-7a2367",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4403-s03-73ed09",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4405-s03-a74796",
+      "anomaly": "none",
+      "mast": "system_design"
+    }
+  ],
+  "decision": {
+    "single": "single",
+    "batch": "single",
+    "revisit_condition": "Reopen if, on a batch task set of at least two batches of five separate issues, each issue with its own test (a grounded check and a failing test the fix must pass), run three sweeps with the five constants held, arm M passes at least 2 more batch runs out of 6 than arm S-plus at arm M's measured mean spend (within 25%) and no fewer issues; or if the daily batch gets a wall-clock requirement below one agent's measured batch time (31.4 s for S, 43.8 s for S-plus) and the split meets it with no fewer passes than S-plus."
+  }
 }
