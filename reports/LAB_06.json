@@ -1,5 +1,5 @@
 {
-  "gates": {"daily": [null, null, null, null], "batch": [null, null, null, null]},
+  "gates": {"daily": ["pass", "pass", "fail", "not_reached"], "batch": ["pass", "pass", "pass", "pass"]},
   "constants": {"model": null, "schemas_sha": null, "checks_sha": null, "reviewer": null, "task_ids": []},
   "arms": {
     "S": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
